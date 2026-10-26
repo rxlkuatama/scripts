@@ -1,0 +1,14 @@
+
+# A command to view a csv file in a better format directly in the terminal 
+
+# column formats text into aligned columns 
+# -s, uses comma as separator
+#-t creates a table with aligned columns 
+# -#2 sets horizontal scrolling to a small step of 2 columns 
+# -N displays line numbers
+
+
+column -s, -t < file_name_here.cs
+v | less -#2 -N
+
+
