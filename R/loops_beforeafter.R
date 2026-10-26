@@ -1,6 +1,6 @@
 
 # This loop aims to : 
-  # 1. replace all NAs into 0 
+  # 1. handle missing data by imputation
   # 2. create new column for every imputed variable 
   # 3. count NA value before and after imputation
   # 4. display before and after plot
@@ -8,8 +8,7 @@
 
 File <- read.table("yourdata.csv", sep = ",", header= TRUE)
 
-
-# Assign which columns we want to iterate
+# Assign which columns we want to iterate. This assumes they are continuous
 start <- which(names(File) == "col_name1")
 end <- which(names(File) == "col_name2")
 
