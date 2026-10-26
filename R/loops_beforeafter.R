@@ -3,16 +3,15 @@
   # 1. handle missing data by imputation
   # 2. create new column for every imputed variable 
   # 3. count NA value before and after imputation
-  # 4. display before and after plot
+  # 4. generate plot for before and after imputation
 
 
 File <- read.table("yourdata.csv", sep = ",", header= TRUE)
 
-# Assign which columns we want to iterate. This assumes they are continuous
-start <- which(names(File) == "col_name1")
-end <- which(names(File) == "col_name2")
+# Assign which columns we want to iterate
+cols <- c("col1", "col2", "col3")
 
-for (i in start:end){
+for (i in cols){
   
   # assign name for imputed variable (ex : "Heightimp") 
   imp <- paste0(names(File)[i], "imp")
@@ -22,7 +21,7 @@ for (i in start:end){
   
   # before after NA counts
   cat(
-    "Variable :", names(File)[i], "\n",
+    "Variable :", i, "\n",
     "No of NA before: ", sum(is.na(File[[i]])), "\n", 
     "No of NA after: ", sum(is.na(File[[imp]])), "\n"
   )
