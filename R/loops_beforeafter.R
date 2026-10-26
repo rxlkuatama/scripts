@@ -3,7 +3,7 @@
   # 1. replace all NAs into 0 
   # 2. create new column for every imputed variable 
   # 3. count NA value before and after imputation
-  # 4. diplay before and after plot
+  # 4. display before and after plot
 
 
 File <- read.table("yourdata.csv", sep = ",", header= TRUE)
